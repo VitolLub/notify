@@ -15,7 +15,7 @@ class Index extends CI_Controller {
         $confirmation = $this->pages_model->get_api_keys_confirmation($this->ion_auth->user()->row()->id);
         //check if user first titme or not
         if(intval($confirmation[0]->confirmation)==1){
-            header("Location:  ".$_SERVER['SERVER_NAME']."/create/orderlist/index");
+            header("Location:  orderlist/index");
         }else{
             $api_keys = $this->pages_model->check_api_keys($this->ion_auth->user()->row()->id);
 
